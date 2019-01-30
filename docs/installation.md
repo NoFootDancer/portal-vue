@@ -9,12 +9,10 @@ This is the recommended way to install this Plugin.
 Install with npm as a dependency:
 
 ```bash
-npm i portal-vue # v1.3.0 (stable)
-npm i portal-vue@next # v1.4.0-beta.1 (current beta)
+npm i portal-vue
 
 # or with yarn, respectively:
 yarn add portal-vue
-yarn add portal-vue@next
 ```
 
 Then include the package in your application and register it with Vue:
@@ -29,13 +27,13 @@ Vue.use(PortalVue)
 ### CDN
 
 PortalVue is available through a couple of CDNs, I recommend
-<a href="hhtp://www.unpkg.com">unpkg.com</a>
+<a href="http://www.unpkg.com">unpkg.com</a>
 
 Just include the script tag _after_ the one of Vue.js
 
 ```html
-<scipt src="http://unpkg/vue/dist/vue.js"></scipt>
-<script src="http://unpkg.com/portal-vue.js"></script>
+<scipt src="https://unpkg.com/vue/dist/vue.js"></scipt>
+<script src="https://unpkg.com/portal-vue/dist/portal-vue.js"></script>
 ```
 
 In this case, the plugin will auto-install itself, so there is no need to call Vue.use().
@@ -78,12 +76,12 @@ If you don't want to register the components globally, don't do `Vue.use('Portal
 Instead, import the component(s) in those components that you need them in and register them locally:
 
 ```javascript
-import { Portal, PortalTarget } from 'portal-vue'
+import PortalVue from 'portal-vue'
 
 export default {
   components: {
-    Portal,
-    PortalTarget,
+    Portal: PortalVue.Portal,
+    PortalTarget: PortalVue.PortalTarget,
   },
 }
 ```
